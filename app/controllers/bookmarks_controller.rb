@@ -21,6 +21,13 @@ class BookmarksController < ApplicationController
   def edit
   end
 
+  def bookmarks_category
+
+    @bookmarks = Bookmark.find_by({category: cat_params})
+    render json: @bookmarks.as_json(include: [:category, :type])
+
+  end
+
   # POST /bookmarks or /bookmarks.json
   def create
     @bookmark = Bookmark.new(bookmark_params)
@@ -69,5 +76,9 @@ class BookmarksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def bookmark_params
       params.require(:bookmark).permit(:name, :url, :type_id, :category_id)
+    end
+
+    def cat_params
+      params.require(:category)
     end
 end

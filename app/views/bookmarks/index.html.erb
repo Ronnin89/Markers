@@ -2,9 +2,8 @@
 
 <h1>Bookmarks</h1>
 
-
-<div class="m-4 bordered-1">
-  <%= render 'form' , bookmark: @bookmark%>
+<div class="m-4">
+  <%= render 'form', bookmark: @bookmark %>
 </div>
 
 <table class="table table-bordered" id="table_bookmarks">
@@ -19,7 +18,9 @@
   </thead>
 
   <tbody>
-     <%= render @bookmarks %>
+     <tr>
+      <%= render @bookmarks %>
+     </tr>
   </tbody>
 </table>
 
@@ -28,4 +29,4 @@
 <%= link_to 'New Bookmark', new_bookmark_path %>
 
 
-<%= pie_chart @pie_types, title: "Bookmarks por Kind"%>
+<%= pie_chart @pie_types, title: "Marcadores por Tipos"%>
