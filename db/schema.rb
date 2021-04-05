@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2021_04_05_144307) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.boolean "private"
-    t.integer "categories_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_categories_on_categories_id"
+    t.index ["category_id"], name: "index_categories_on_category_id"
   end
 
   create_table "types", force: :cascade do |t|

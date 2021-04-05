@@ -1,5 +1,9 @@
 {
   "name": "markers",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "chartkick": "^4.0.0",
+    "jquery": "^3.6.0"
+  }
 }

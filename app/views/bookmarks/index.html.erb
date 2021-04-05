@@ -2,7 +2,12 @@
 
 <h1>Bookmarks</h1>
 
-<table>
+
+<div class="m-4 bordered-1">
+  <%= render 'form' , bookmark: @bookmark%>
+</div>
+
+<table class="table table-bordered" id="table_bookmarks">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,20 +19,13 @@
   </thead>
 
   <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.name %></td>
-        <td><%= bookmark.url %></td>
-        <td><%= bookmark.type %></td>
-        <td><%= bookmark.category %></td>
-        <td><%= link_to 'Show', bookmark %></td>
-        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
-        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+     <%= render @bookmarks %>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Bookmark', new_bookmark_path %>
+
+
+<%= pie_chart @pie_types, title: "Bookmarks por Kind"%>
