@@ -22,10 +22,8 @@ class BookmarksController < ApplicationController
   end
 
   def bookmarks_category
-
-    @bookmarks = Bookmark.find_by({category: cat_params})
-    render json: @bookmarks.as_json(include: [:category, :type])
-
+    @bookmarks = Bookmark.where(category: cat_params)
+    render json: @bookmarks.as_json(include: :category)
   end
 
   # POST /bookmarks or /bookmarks.json
